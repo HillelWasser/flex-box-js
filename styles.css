@@ -1,12 +1,22 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&family=Roboto:wght@100;400&display=swap'); 
+ 
+
+
 body {
     padding: 0px;
     margin: 0px;
     width: 100%;
+    display: grid;
+    grid-template-rows: 10% 50% 25% 15%;
+    grid-template-columns:1fr 1fr;
 }
 .navParent {
+ grid-area: 1/1/1/3;
 display: flex;
 flex-direction: row;
 align-items: center;
+justify-content: space-between;
 padding: 8px 16px;
 /* width: 100%; */
 height: 56px;
@@ -18,8 +28,8 @@ background: #343A40;
 #Navbar {
 display: flex;
 align-items: center;
-width: 64px;
-height: 30px;
+/* width: 64px;
+height: 30px; */
 font-family: 'Roboto';
 font-style: normal;
 font-weight: 400;
@@ -49,6 +59,7 @@ height: 40px;
     /* padding-left: 25px; */
     margin: 0px;
     margin-left: 20px;
+    gap: 25px;
 }
 
 #Dropdown {
@@ -152,23 +163,27 @@ color: rgba(255, 255, 255, 0.25);
 }
 
 #main {
+    grid-area: 2/1/2/3;
     display: flex;
     flex-direction: column;
     padding: 0px;
     margin: 0px;
     /* width: 100%; */
-    height: 659.78px;
+    /* height: fit-content; */
     left: 0px;
     top: 56px;
 }
 
 #upMain {
+    /* display: grid; */
+  
     display: flex;
     flex-direction:column;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     align-items: center;
-    padding: 64px 186px 80px;
-    height: 350.39px;
+    padding:64px 186px 80px;
+ /* 186px 80px; */
+    /* height: fit-content; */
     background: #E9ECEF;
     border-radius: 4.8px;
     flex-grow: 0;
@@ -180,14 +195,15 @@ color: rgba(255, 255, 255, 0.25);
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    height: 65% ;   
+    height: fit-content ; 
+    gap: 40px;  
 }
 
 #helloW {
     display: flex;
     align-items: center;
-    width: 396.34px;
-    height: 80px;
+    /* width: 396.34px; */
+    height: fit-content;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 300;
@@ -200,25 +216,25 @@ color: rgba(255, 255, 255, 0.25);
 #longText {
     display: flex;
     align-items: center;
-    height: 41px;
+    height: fit-content;
     left: 15px;
-    top: 97.39px;
+    /* top: 97.39px; */
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
     color: #212529;
-    padding-bottom: 20px;
+    padding-bottom: 0;
     width: 70%;
 }
 
 #learnBtn {
     display: flex;
     align-items: center;
-    text-align: center;
-    width: 152.97px;
-height: 48px;
+    /* text-align: center; */
+    width: fit-content;
+height: fit-content;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -233,20 +249,16 @@ height: 48px;
 
 #downMain {
 display: flex;
-justify-content: center;
-width: 100%;
-}
-
-#downMainChild {
-display: flex;
 flex-direction: row;
-justify-content:space-evenly;
-width: 70%;
-margin: 0px;
-padding: 0px;
+justify-content:center;
+flex-wrap: wrap;
+width:100%;
+gap: 50px;
+margin: 20px;
 }
 
-.boxHeding {
+
+.boxHeading {
 display: flex;
 align-items: center;
 color: #212529;
@@ -262,12 +274,16 @@ padding: 0px;
 .boxInfo {
 display: flex;
 flex-direction: column;
+padding-top: 30px;
+
 
 }
 
 .boxText {
 display:flex;
+align-items: center;
 font-family: 'Roboto';
+text-align:left;
 font-style: normal;
 font-weight: 400;
 font-size: 15px;
@@ -307,4 +323,41 @@ font-weight: 400;
 font-size: 16px;
 line-height: 24px;
 padding: 70px;
+}
+
+/* #iconBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #dd1579;
+    height: 1.2vh;
+    width: 2vw;
+    background: rgb(247, 0, 0);
+    display: block;
+} */
+
+
+@media(max-width:800px) {
+    #downMain {
+        flex-direction: column;
+        justify-content: end;
+        align-items:center;
+    }
+    #longNavChild {
+        display: none;
+    }
+
+    #upMain {
+        padding: 70px;
+    }
+
+}
+@media(min-width:800px) {
+ #iconBar {
+    display: none;
+ }
+}
+
+#downMenu {
+    display: none;
 }
